@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://c3qxnrolcl2p0"]
+
+[ext_resource type="Texture2D" uid="uid://csejqaw0n75cl" path="res://Entities/Face/Faces.png" id="1_w0abo"]
+[ext_resource type="Script" uid="uid://dg0cl8n2jhv02" path="res://Entities/Face/Face.gd" id="2_amgth"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_41ewn"]
+size = Vector2(24, 24)
+
+[node name="Face" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="." node_paths=PackedStringArray("sprite")]
+script = ExtResource("2_amgth")
+sprite = NodePath("../Face")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(12, 12)
+shape = SubResource("RectangleShape2D_41ewn")
+
+[node name="Face" type="Sprite2D" parent="."]
+texture = ExtResource("1_w0abo")
+centered = false
+hframes = 5
+
+[connection signal="mouse_entered" from="Area2D" to="Area2D" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="Area2D" method="_on_mouse_exited"]

@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://c4d5ra07ghtik"]
+
+[ext_resource type="Script" uid="uid://chsdyxr07vtrf" path="res://Entities/DigitDisplay/DigitDisplay.gd" id="1_um7mn"]
+[ext_resource type="Texture2D" uid="uid://cck30r72ntffe" path="res://Entities/DigitDisplay/Numbers.png" id="2_l6osp"]
+
+[node name="DisplayBoard" type="Node2D" node_paths=PackedStringArray("ones", "tens", "hundreds")]
+script = ExtResource("1_um7mn")
+ones = NodePath("OnesDigit")
+tens = NodePath("TensDigit")
+hundreds = NodePath("HundredsDigit")
+
+[node name="HundredsDigit" type="Sprite2D" parent="."]
+texture = ExtResource("2_l6osp")
+centered = false
+hframes = 12
+frame = 9
+
+[node name="TensDigit" type="Sprite2D" parent="."]
+position = Vector2(13, 0)
+texture = ExtResource("2_l6osp")
+centered = false
+hframes = 12
+frame = 9
+
+[node name="OnesDigit" type="Sprite2D" parent="."]
+position = Vector2(26, 0)
+texture = ExtResource("2_l6osp")
+centered = false
+hframes = 12
+frame = 9
